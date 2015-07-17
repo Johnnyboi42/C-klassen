@@ -1,0 +1,27 @@
+# -*- coding: cp1252 -*-
+grade = map(float, raw_input("Indtast Karakterer: \n").split())
+
+gradeAVG = 0.0
+
+def AVG(grade):
+    global gradeAVG
+    for i in range(len(grade)):
+        gradeAVG = gradeAVG + grade[i]
+    gradeAVG = gradeAVG / len(grade)
+    return gradeAVG
+
+
+def Klasse(C):
+    nElever = 15
+    AVG(grade)
+    if gradeAVG < 2:
+        nElever = nElever - 1
+        return nElever
+    return nElever
+
+if gradeAVG < 2:
+    print "Dit gennemsnit er for lavt :("
+else:
+    print "Dit gennemsnit er højt nok :)"
+
+print "Der er nu", Klasse(grade), "elever i C-klassen"
